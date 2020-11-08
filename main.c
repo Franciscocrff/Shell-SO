@@ -9,14 +9,14 @@
 #define MAX_TAM 512
 #define STDOUT_FILENO 1 
 
-////////////////////////////////////////////////////////////
-// Nessa função foi tratado todas as possiveis ocorrencias de comando, sendo:
-// 1 - encerramento do programa utilizando o comando 'quit';
-// 2 - uma entrada nula no programa;
-// 3 - trata-se que o comando sempre o primeiro e o ultimo;
-// 4 - o comando nao é o primeiro mas é o ultimo;
-// 5 - esta ocorrencia tratada foi o primeiro comando;   
-// caso tenha outros separados por ','.
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Nessa função foi tratado todas as possiveis ocorrencias de comando, sendo:                //
+// 1 - encerramento do programa utilizando o comando 'quit';                                 //
+// 2 - uma entrada nula no programa;                                                         //
+// 3 - trata-se que o comando sempre o primeiro e o ultimo;                                  //
+// 4 - o comando nao é o primeiro mas é o ultimo;                                            //
+// 5 - esta ocorrencia tratada foi o primeiro comando caso tenha outros separados por ','.   //
+//////////////////////////////////////////////////////////////////////////////////////////////
 void verificarComando(char* args[], char* ProxComando, int OutroComando, int* fd){
 
   if(strcmp(args[0], "quit") == 0)
