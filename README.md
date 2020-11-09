@@ -6,8 +6,10 @@ Gabriel Guimarães Batalha - 3915
 <br>
 Matheus de Deus Rocha - 3918
 <br>
+
 Projeto solicitado pela disciplina SIN 351 - Sistemas Operacionais referente ao período 04/2020.
 <br>
+
 A proposta do trabalho era desenvolver um Shell/Interpretador de Comandos(CLI) que seja capaz de receber entradas dos usuários (comandos), processá-los (caso ele exista) e exibir a saída na tela de Prompt.
 <br>
 Algumas validações feitas pelos usuários foram:
