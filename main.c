@@ -80,3 +80,56 @@ void verificarComando(char* args[], char* ProxComando, int OutroComando, int* fd
 			perror("erro no wait\n");
 	}
 }
+
+
+void tratarEntrada(char *str){
+	int pos=0; // pos do ultimo args adicionado ao vetor de strings(char **args)
+	char **args;
+  int OutroComando=1;
+	char *tokenVir = strtok(str, ",");
+  int fd[2]; //comunica os processos (files descriptors)
+
+	if (pipe(fd) < 0) {
+		perror("erro no pipe\n");
+		return ;
+	}
+  do{
+    char *tokenEsp = strtok(tokenVir, " ");     
+		args = malloc(sizeof(char*)*MAX_TAM);
+    do{         
+			args[pos] = malloc(sizeof(char)*MAX_TAM);
+			args[pos] = tokenEsp;			
+			pos++;
+			tokenEsp = strtok(NULL, " ");
+		args[pos] = NULL; 
+		tokenVir = strtok(NULL, ","); 
+		verificarComando(args, tokenVir, OutroComando, fd);       
+		free(args);
+		pos = 0;
+		if (OutroComando == 1)
+			OutroComando = 0;
+    }while (tokenEsp != NULL);  
+  
+  }while (tokenVir != NULL);
+}
+
+int main( ){
+
+	int len = 0;
+	char entrada[MAX_TAM];
+
+	do{
+		printf("\e[93m");
+		printf("Meu.Shell> ");		
+		printf("\e[32m");
+		fgets(entrada, sizeof(entrada), stdin);
+		len = strlen(entrada);
+		
+		if (len > 0 && entrada[len-1] == '\n') 
+      		  entrada[len-1] = '\0';  
+		fflush(stdin);
+		tratarEntrada(entrada);
+	}while(1);
+
+	return 0;
+}
