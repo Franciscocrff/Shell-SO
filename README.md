@@ -10,6 +10,9 @@ Matheus de Deus Rocha - 3918
 Projeto solicitado pela disciplina SIN 351 - Sistemas Operacionais referente ao período 04/2020.
 <br>
 
+Para compilar e executar o programa, é necessário baixar o projeto do GIT, acessar a pasta do projeto, iniciar o terminal e executar o comando "make".
+
+<br>
 A proposta do trabalho era desenvolver um Shell/Interpretador de Comandos(CLI) que seja capaz de receber entradas dos usuários (comandos), processá-los (caso ele exista) e exibir a saída na tela de Prompt.
 <br>
 Algumas validações feitas pelos usuários foram:
