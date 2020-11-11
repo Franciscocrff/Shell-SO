@@ -49,3 +49,4 @@ https://www.dca.ufrn.br/~adelardo/cursos/DCA409/node34.html
 <br>
 https://linux.die.net/man/3/strtok_r
 <br>
+https://stackoverflow.com/questions/4693884/nested-strtok-function-problem-in-c
