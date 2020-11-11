@@ -96,7 +96,7 @@ void tratarEntrada(char *str){
 	}
   do{
     char *tokenEsp = strtok(tokenVir, " ");     
-		args = malloc(sizeof(char*)*MAX_TAM);
+	args = malloc(sizeof(char*)*MAX_TAM);
     do{         
 			args[pos] = malloc(sizeof(char)*MAX_TAM);
 			args[pos] = tokenEsp;			
